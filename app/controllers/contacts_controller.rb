@@ -7,11 +7,11 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     
     if @contact.save
-      name = params[:contact][:name]# get the quires from the form and and assign it to name parameter// this synatx called hashes , where contacts are the hashe's name and name is the key value
+      name = params[:contact][:name]# get the quires from the form and and assign it to name parameter// this synatx called hashes , where contacts are the hashe's name and name is the key valu
       email = params[:contact][:email]
       body = params[:contact][:comments]
     
-      ContactMailer.contact_email(name, email, body).deliver# pass the parameters to ContactMailer class contact_email message in particular
+      ContactMailer.contact_email(name, email, body).deliver# pass  the parameters to ContactMailer class contact_email message in particular
       flash[:success] = 'Message sent.'
       redirect_to new_contact_path
       
@@ -19,7 +19,8 @@ class ContactsController < ApplicationController
       flash[:danger] = 'Error occured, message has not been sent.'
       redirect_to new_contact_path
     end
-  end
+  
+end
   
   private
     def contact_params
