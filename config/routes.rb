@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :contacts # generate the routs for the action contacts 
   get '/about' => 'pages#about'
   root 'pages#home'
