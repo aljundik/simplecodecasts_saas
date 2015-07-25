@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users , controllers: { registrations: 'users/registrations' }
-  resources :users do
-    resource :profile
-  end
+    resources :users do
+      resource :profile
+    end
   resources :contacts # generate the routs for the action contacts 
   get '/about' => 'pages#about'
   root 'pages#home'
