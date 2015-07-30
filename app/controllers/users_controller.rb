@@ -5,6 +5,6 @@ class UsersController < ApplicationController
     @users = User.includes(:profile) # save all the users into the instant variable
   end
   def show
-    @user = User.find( params[:id] )
+    @user = User.find( params[:id] ) # example of editng
   end
 end
